@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Template</title>
+    <style>
+        :root {
+            --primary-orange: #e65c2e;
+            --light-grey: #f4f4f4;
+            --border-color: #ddd;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            background-color: #525659; /* PDF viewer style background */
+        }
+
+        .invoice-container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .company-info {
+            display: flex;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #777;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .invoice-title-area {
+            text-align: right;
+        }
+
+        .invoice-title-area h1 {
+            font-size: 2.5rem;
+            color: #999;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .meta-data {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .meta-row {
+            border-bottom: 1px solid var(--border-color);
+            padding: 5px 0;
+            width: 200px;
+            margin-left: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Billing Section */
+        .billing-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .bill-to, .ship-to {
+            width: 45%;
+        }
+
+        .section-label {
+            color: #2c3e50;
+            font-weight: bold;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .payment-terms {
+            text-align: right;
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        thead th {
+            background-color: var(--primary-orange);
+            color: white;
+            text-transform: uppercase;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: var(--light-grey);
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            height: 25px;
+        }
+
+        .text-right { text-align: right; }
+        .text-center { text-align: center; }
+
+        /* Totals Section */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 20px;
+        }
+
+        .totals-table {
+            width: 100%;
+        }
+
+        .totals-table td {
+            border: none;
+            padding: 4px 10px;
+        }
+
+        .balance-due-box {
+            background-color: #f2dede;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .invoice-container { box-shadow: none; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="invoice-container">
+    <div class="header">
+        <div class="company-info">
+            <div class="logo-placeholder">LOGO</div>
+            <div>
+                <strong>&lt;Your Company Name&gt;</strong><br>
+                &lt;Your address&gt;<br>
+                &lt;Your contact details&gt;
+            </div>
+        </div>
+        <div class="invoice-title-area">
+            <h1>INVOICE</h1>
+            <div class="meta-data">
+                <div class="meta-row"><span>DATE</span> <span></span></div>
+                <div class="meta-row"><span>INVOICE NO.</span> <span></span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-terms">
+        &lt;Payment terms (due on receipt, due in X days)&gt;
+    </div>
+
+    <div class="billing-section">
+        <div class="bill-to">
+            <div class="section-label">BILL TO</div>
+            &lt;Contact Name&gt;<br>
+            &lt;Client Company Name&gt;<br>
+            &lt;Address&gt;<br>
+            &lt;Phone&gt;<br>
+            &lt;Email&gt;
+        </div>
+        <div class="ship-to">
+            <div class="section-label">SHIP TO</div>
+            &lt;Name / Dept&gt;<br>
+            &lt;Client Company Name&gt;<br>
+            &lt;Address&gt;<br>
+            &lt;Phone&gt;
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="50%">DESCRIPTION</th>
+                <th>QTY</th>
+                <th>UNIT PRICE</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-right">0.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer-grid">
+        <div class="remarks">
+            <strong>Remarks / Payment Instructions:</strong>
+            <div style="border-bottom: 1px solid #ddd; height: 100px;"></div>
+        </div>
+        <div class="totals">
+            <table class="totals-table">
+                <tr><td class="text-right">SUBTOTAL</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00</td></tr>
+                <tr><td class="text-right">DISCOUNT</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00</td></tr>
+                <tr><td class="text-right">SUBTOTAL LESS DISCOUNT</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00</td></tr>
+                <tr><td class="text-right">TAX RATE</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00%</td></tr>
+                <tr><td class="text-right">TOTAL TAX</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00</td></tr>
+                <tr><td class="text-right">SHIPPING/HANDLING</td><td class="text-right" style="border-bottom: 1px solid #ddd">0.00</td></tr>
+            </table>
+            <div class="balance-due-box">
+                <span>Balance Due</span>
+                <span>$ -</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

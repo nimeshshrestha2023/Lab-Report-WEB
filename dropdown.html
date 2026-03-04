@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            background-color: black;
+            color: white;
+        }
+        li{
+            display: inline-block;
+            padding: 10px;
+           
+        }
+        li:hover{
+            background-color: teal;
+            color: white;
+        }
+
+        .dropdown{display: none;}
+
+        ul li:hover .dropdown{
+            display: block;
+            position: absolute;
+            margin-left: -10px;
+            margin-top: 10px;
+        }
+
+        .dropdown ul li{
+            display: block;
+        }
+
+        .dropdown-mern{display: none;}
+        .dropdown ul li:hover .dropdown-mern{
+            display: block;
+            position: absolute;
+            margin-left:  4.2cm;
+            margin-top: -20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>Courses
+            <div class="dropdown">
+                <ul>
+                    <li>MERN Stack
+                        <div class="dropdown-mern">
+                           <ul>
+                             <li>Full time developer</li>
+                            <li>Part time developer</li>
+                           </ul>
+                        </div>
+                    </li>
+                    <li>CyberSecurity Defence</li>
+                    <li>MongoDB</li>
+                    <li>QA</li>
+                </ul>
+            </div>
+        </li>
+        <li>Services</li>
+        <li>Contact</li>
+    </ul>
+    
+</body>
+</html>

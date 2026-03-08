@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration / Login Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470") no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            height: 100%;
+            padding-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .form-box {
+            width: 350px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 25px;
+            color: white;
+            border-radius: 5px;
+        }
+        .form-box h2 {
+            color: #00c6ff;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px -10px;
+            border: none;
+            border-radius: 3px;
+            opacity: 0.4;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            background: #f4b400;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d99a00;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .footer {
+            text-align: center;
+            color: #ccc;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>REGISTRATION / LOGIN FORM</h1>
+
+        <div class="container">
+            <!-- Register Form -->
+            <div class="form-box">
+                <h2>Register Form :</h2>
+                <input type="text" placeholder="Username">
+                <input type="email" placeholder="Email">
+                <div class="small">Please enter a valid email address</div>
+                <input type="password" placeholder="Password">
+                <div class="small">Minimum of 6 characters</div>
+                <input type="password" placeholder="Confirm Password">
+                <label>
+                    <input type="radio" name="gender"> Female
+                </label>
+                <label>
+                    <input type="radio" name="gender"> Male
+                </label>
+                <br><br>
+                <label>
+                    <input type="checkbox"> I have read and accept terms of use.
+                </label>
+
+                <button>SUBMIT</button>
+
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-box">
+                <h2>Login form :</h2>
+                <input type="email" placeholder="Enter Your Email">
+                <input type="password" placeholder="Password">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+                <button>LOGIN</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 Registration / Login form
+        </div>
+
+    </div>
+
+</body>
+
+</html>

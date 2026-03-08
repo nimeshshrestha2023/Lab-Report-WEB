@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .navbar {
+            background: #002e4f;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+        }
+
+        #toggle,
+        .menu-button {
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+                color: white;
+                border: 1px solid white;
+                padding: 5px 10px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            
+            .nav-links {
+                position: absolute;
+                top: 65px;
+                left: -100%;
+                background: #002e4f;
+                width: 250px;
+                height: 100vh;
+                flex-direction: column;
+                transition: 0.4s;
+                border-top: 1px solid #1a3e5a;
+            }
+
+            #toggle:checked~.nav-links {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #1a3e5a;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 20px 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+       <h2 class="logo">Mystery Code</h2>
+        <input type="checkbox" id="toggle">
+
+        <label for="toggle" class="menu-button">Menu</label>
+
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>

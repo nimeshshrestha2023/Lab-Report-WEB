@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flex Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .top-area{
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+            background-color: orange;
+        }
+
+        .mid-area{
+            display: flex;
+        }
+
+        .left-mid-area{
+            width: 50%;
+            padding: 150px;
+            background-color: lightblue;
+            text-align: center;
+        }
+
+         .right-mid-area{
+            width: 50%;
+            padding: 150px;
+            background-color: lightgreen;
+            text-align: center;
+        }
+
+        .end-area{
+            display: flex;
+        }
+
+        .end-area4{
+            width: 25%;
+            padding: 80px;
+            background-color: coral;
+        }
+
+        .end-area5{
+            width: 50%;
+            padding: 80px;
+            background-color: yellow;
+        }
+
+        .end-area6{
+            width: 25%;
+            padding: 80px;
+            background-color: paleturquoise;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="top-area">
+        Content Area 1 
+    </div>
+
+    <div class="mid-area">
+        <div class="left-mid-area">Content Area 2</div>
+        <div class="right-mid-area">Content Area 3</div>
+    </div>
+
+    <div class="end-area">
+        <div class="end-area4">Content Area 4</div>
+        <div class="end-area5">Content Area 5</div>
+        <div class="end-area6">Content Area 6</div>
+    </div>
+    
+</body>
+</html>

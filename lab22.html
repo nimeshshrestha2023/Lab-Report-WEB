@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logsewa Aayog Form</title>
+    <style>
+        body {
+            background: #0f172a;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 600px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #444;
+        }
+
+        input,
+        select {
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="date"] {
+            color: transparent;
+        }
+
+        .wide {
+            grid-column: span 2;
+        }
+
+        .gender p {
+            margin: 0 0 5px 0;
+        }
+
+        .gender {
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .gender label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        .actions {
+            grid-column: span 3;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .back {
+            border: 1px solid #2563eb;
+            color: #2563eb;
+            background: none;
+        }
+
+        .send {
+            background: #2563eb;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="header">
+            <div class="logo">
+                <img src="assets/images/commission-logo.png" width="80" alt=""> <span>लोक सेवा आयोग</span>
+            </div>
+            <div class="lang">नेपा ▾</div>
+        </div>
+
+        <h2>दर्ता गर्नुहोस्</h2>
+
+        <form>
+            <label>पहिलो नाम* <input type="text"></label>
+            <label>बीचको नाम <input type="text"></label>
+            <label>थर* <input type="text"></label>
+
+            <label>प्रयोगकर्ता नाम* <input type="text"></label>
+            <label>जन्म मिति (वि.सं.)* <input type="date"></label>
+            <label>जन्म मिति (ई.सं.)* <input type="date"></label>
+
+            <div class="gender">
+                <p>लिङ्ग*</p>
+                <label><input type="radio" name="g" checked> पुरुष</label>
+                <label><input type="radio" name="g"> महिला</label>
+                <label><input type="radio" name="g"> अन्य</label>
+            </div>
+            <label class="wide">ईमेल* <input type="email"></label>
+
+            <label>मोबाइल नम्बर* <input type="tel"></label>
+            <label>राष्ट्रिय परिचय नम्बर <input type="text"></label>
+            <label>नागरिकता नम्बर* <input type="text"></label>
+            <label>नागरिकता जारी जिल्ला
+                <select>
+                    <option>विकल्प छान्नुहोस ...</option>
+                    <option>TAPLEJUNG</option>
+                    <option>PANCHTHAR</option>
+                    <option>DHANKUTA</option>
+                    <option>MORANG</option>
+                    <option>BHOJPUR</option>
+                    <option>SUNSARI</option>
+                    <option>SAPTARI</option>
+                </select>
+            </label>
+
+            <label>नागरिकता जारी मिति (वि.सं.)<input type="date"></label>
+            <label>नागरिकता जारी मिति (ई.सं.) <input type="date" disabled></label>
+
+            <div class="actions">
+                <button type="button" class="back">लग-इनमा फर्कनुहोस्</button>
+                <button type="submit" class="send">बुझाउनुहोस्</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

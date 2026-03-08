@@ -2,86 +2,160 @@
 <html>
 <head>
     <title>List Structure</title>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+
+        }
+
+        .left-container {
+            width: 40%;
+            border: 2px solid blue;
+            padding: 10px;
+            line-height: 25px;
+        }
+
+        .right-container {
+            width: 60%;
+            border: 2px solid blue;
+            padding: 10px;
+        }
+
+        .order-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list-style-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .section {
+            width: 48%;
+        }
+        .text-styling{
+            font-style:italic;
+            font-weight:bolder;
+        }
+    </style>
+
 </head>
+
 <body>
 
     <div class="container">
-        <ol type="I">
-    <li>List Item 1
-        <ol type="a">
-            <li>Nested Item 1.1</li>
-            <li>Nested Item 1.2</li>
-        </ol>
-    </li>
 
-    <li>List Item 2
-        <ol type="1">
-            <li>Nested Item 2.1</li>
-            <li>Nested Item 2.2
-                <ul type="circle">
-                    <li>Nested Item 2.2.1</li>
-                    <li>Nested Item 2.2.2
-                        <ul type="square">
-                            <li>Nested Item 2.2.2.1</li>
-                            <li>Nested Item 2.2.2.2</li>
-                        </ul>
-                    </li>
-                    <li>Nested Item 2.2.3</li>
-                </ul>
-            </li>
-            <li>Nested Item 2.3</li>
-        </ol>
-    </li>
+        <!-- LEFT SIDE -->
+        <div class="left-container">
 
-    <li>List Item 3
-        <ul type="disc">
-            <li>Nested Item 3.1</li>
-            <li>Nested Item 3.1</li>
-            <li>Nested Item 3.1</li>
-        </ul>
-    </li>
-</ol>
+            <ol type="I">
+                <li>List Item 1
+                    <ol type="a">
+                        <li>Nested Item 1.1</li>
+                        <li>Nested Item 1.2</li>
+                    </ol>
+                </li>
 
-<hr>
+                <li>List Item 2
+                    <ol>
+                        <li>Nested Item 2.1</li>
 
-<!-- RIGHT SIDE LIST EXAMPLES -->
+                        <li>Nested Item 2.2
+                            <ul type="circle">
+                                <li>Nested Item 2.2.1</li>
 
-<h3>An unordered list.</h3>
-<ul>
-    <li>First Item</li>
-    <li>Second Item</li>
-    <li>Third Item</li>
-    <li>Fourth Item</li>
-    <li>Fifth Item</li>
-</ul>
+                                <li>Nested Item 2.2.2
+                                    <ul type="square">
+                                        <li>Nested Item 2.2.2.1</li>
+                                        <li>Nested Item 2.2.2.2</li>
+                                    </ul>
+                                </li>
 
-<h3>An ordered list</h3>
-<ol>
-    <li>First Item</li>
-    <li>Second Item</li>
-    <li>Third Item</li>
-    <li>Fourth Item</li>
-    <li>Fifth Item</li>
-</ol>
+                                <li>Nested Item 2.2.3</li>
+                            </ul>
+                        </li>
 
-<h3>A list with lower alpha.</h3>
-<ol type="a">
-    <li>First Item</li>
-    <li>Second Item</li>
-    <li>Third Item</li>
-    <li>Fourth Item</li>
-    <li>Fifth Item</li>
-</ol>
+                        <li>Nested Item 2.3</li>
+                    </ol>
+                </li>
 
-<h3>A list with upper roman</h3>
-<ol type="I">
-    <li>First Item</li>
-    <li>Second Item</li>
-    <li>Third Item</li>
-    <li>Fourth Item</li>
-    <li>Fifth Item</li>
-</ol>
+                <li>List Item 3
+                    <ul>
+                        <li>Nested Item 3.1</li>
+                        <li>Nested Item 3.2</li>
+                        <li>Nested Item 3.3</li>
+                    </ul>
+                </li>
+
+            </ol>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="right-container">
+
+            <div class="order-container">
+
+                <div class="section">
+                    <h3 class="text-styling">An unordered list</h3>
+                    <ul>
+                        <li>First Item</li>
+                        <li>Second Item</li>
+                        <li>Third Item</li>
+                        <li>Fourth Item</li>
+                        <li>Fifth Item</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="text-styling">An ordered list</h3>
+                    <ol>
+                        <li>First Item</li>
+                        <li>Second Item</li>
+                        <li>Third Item</li>
+                        <li>Fourth Item</li>
+                        <li>Fifth Item</li>
+                    </ol>
+                </div>
+
+            </div>
+            <hr>
+
+            <div class="list-style-container">
+
+                <div class="section">
+                    <h3 class="text-styling">A list with lower alpha</h3>
+                    <ol type="a">
+                        <li>First Item</li>
+                        <li>Second Item</li>
+                        <li>Third Item</li>
+                        <li>Fourth Item</li>
+                        <li>Fifth Item</li>
+                    </ol>
+                </div>
+
+                <div class="section">
+                    <h3 class="text-styling">A list with upper roman</h3>
+                    <ol type="I">
+                        <li>First Item</li>
+                        <li>Second Item</li>
+                        <li>Third Item</li>
+                        <li>Fourth Item</li>
+                        <li>Fifth Item</li>
+                    </ol>
+                </div>
+
+            </div>
+            <hr>
+
+        </div>
+
     </div>
 
 </body>
+
 </html>

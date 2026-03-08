@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Responsive Layout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+}
+
+.header{
+    background:#ef6b6b;
+    padding:20px;
+}
+
+.footer{
+    background:#5fa8d3;
+    padding:20px;
+    clear:both;
+}
+
+.left{
+    background:#f0cc66;
+}
+
+.main{
+    background:#eeeeee;
+}
+
+.right{
+    background:#b8e36f;
+}
+
+ /* Mobile Screen  */
+.left, .main, .right{
+    width:100%;
+    padding:40px 0;
+}
+
+/* Tablet Layout */
+@media (min-width:481px) and (max-width:768px){
+
+    .main{
+        width:100%;
+    }
+
+    .left{
+        width:50%;
+        float:left;
+    }
+
+    .right{
+        width:50%;
+        float:left;
+    }
+}
+
+/* Desktop Layout */
+@media (min-width:768px){
+
+    .left{
+        width:25%;
+        float:left;
+    }
+
+    .main{
+        width:50%;
+        float:left;
+    }
+
+    .right{
+        width:25%;
+        float:right;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">Header</div>
+
+<div class="container">
+
+    <div class="main">Main</div>
+    <div class="left">Left</div>
+    <div class="right">Right</div>
+
+</div>
+
+<div class="footer">Footer</div>
+
+</body>
+</html>

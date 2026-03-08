@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Float Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Header */
+        .header {
+            background: #5b5b8a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Menu */
+        .menu {
+            background: #a8b5a2;
+            padding: 10px;
+        }
+
+        /* Container for columns */
+        .main {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Left column */
+        .left {
+            float: left;
+            width: 25%;
+            height: 520px;
+            background: #a94e4e;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Content column */
+        .content {
+            float: left;
+            width: 50%;
+            height: 520px;
+            background: #1e9bd7;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Right column */
+        .right {
+            float: left;
+            width: 25%;
+            height: 520px;
+            background: #7a6ed6;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            clear: both;
+            background: #8a8a8a;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        Header
+    </div>
+
+    <div class="menu">
+        Menu
+    </div>
+
+    <div class="main">
+        <div class="left">
+            Left Side
+        </div>
+
+        <div class="content">
+            Content
+        </div>
+
+        <div class="right">
+            Right
+        </div>
+     </div>
+
+    <div class="footer">
+        Footer
+    </div>
+
+</body>
+
+</html>

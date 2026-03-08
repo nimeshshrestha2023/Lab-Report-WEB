@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Responsive Card Design</title>
+    <style>
+        .team-section {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .header h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .team-grid {
+            flex-wrap: wrap;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 60px;
+            border-radius: 15px;
+            width: 150px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+        }
+
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.1rem;
+        }
+
+        .team-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            background: #eee;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        @media screen and (min-width: 480px) and (max-width: 768px) {
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-card {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="team-section">
+        <div class="header">
+            <p class="subtitle">Experts</p>
+            <h2>Our Team Members</h2>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="image-container">
+                    <img src="https://cdn-icons-png.flaticon.com/512/7084/7084424.png" alt="Noman">
+                </div>
+                <h3>Nimesh</h3>
+                <p>Developer</p>
+                <div class="social-icons">
+                    <span><i class="fab fa-facebook"></i></span>
+                    <span><i class="fab fa-youtube"></i></span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF6Os8aJDDHZPcGnqxhqfnSqGzUIPhPXxw_SnMRB0L-w&s" alt="Noman">
+                </div>
+                <h3>Shyam</h3>
+                <p>Sr. Graphic Designer</p>
+                <div class="social-icons">
+                    <span><i class="fab fa-facebook"></i></span>
+                    <span><i class="fab fa-youtube"></i></span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKEI_ZOu4aWHoYRTBMUNZgFxYe_VDjvdt-wJdbyqjjnw&s" alt="Noman">
+                </div>
+                <h3>Hari</h3>
+                <p>QA</p>
+                <div class="social-icons">
+                    <span><i class="fab fa-facebook"></i></span>
+                    <span><i class="fab fa-youtube"></i></span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="image-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaCWUm26hpBrdU_5vWNpNT55beQEavjQvBjaF6U9magA&s" alt="Noman">
+                </div>
+                <h3>Gopal</h3>
+                <p>Sr. MERN Developer</p>
+                <div class="social-icons">
+                    <span><i class="fab fa-facebook"></i></span>
+                    <span><i class="fab fa-youtube"></i></span>
+                    <span><i class="fab fa-instagram"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>

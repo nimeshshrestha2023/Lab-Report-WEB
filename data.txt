@@ -1,0 +1,1 @@
+Data is loaded from data.txt file.

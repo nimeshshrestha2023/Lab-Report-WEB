@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Open Website in New Tab</h2>
+
+<input type="text" id="url" placeholder="Enter Website URL">
+<button onclick="openWebsite()">Open</button>
+
+<script>
+function openWebsite() {
+    let website = document.getElementById("url").value;
+    window.open(website, "_blank");
+}
+</script>
+
+</body>
+</html>

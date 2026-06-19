@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+        }
+    </style>
+
+
+    <script>
+
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let address = document.getElementById("address").value;
+            let username = document.getElementById("username").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let phone = document.getElementById("phone").value;
+            let course = document.getElementById("course").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+
+            // Name Validation
+            let namePattern = /^[A-Za-z ]+$/;
+
+            if (name == "" || !namePattern.test(name)) {
+                alert("Invalid Name");
+                return false;
+            }
+
+
+            // Address Validation
+            if (address == "") {
+                alert("Address cannot be empty");
+                return false;
+            }
+
+
+            // Username Validation
+            let userPattern = /^[A-Za-z0-9_]+$/;
+
+            if (username == "" || !userPattern.test(username)) {
+                alert("Invalid Username");
+                return false;
+            }
+
+
+            // Email Validation
+            if (email == "" || !email.includes("@")) {
+                alert("Invalid Email");
+                return false;
+            }
+
+
+            // Password Validation
+            let passPattern =
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+            if (password == "" || !passPattern.test(password)) {
+                alert("Invalid Password");
+                return false;
+            }
+
+
+            // Phone Validation
+            let phonePattern = /^(98|97|96)[0-9]{8}$/;
+
+            if (phone == "" || !phonePattern.test(phone)) {
+                alert("Invalid Phone Number");
+                return false;
+            }
+
+
+            // Gender Validation
+            if (gender == null) {
+                alert("Select Gender");
+                return false;
+            }
+
+
+            // Course Validation
+            if (course == "") {
+                alert("Select Course");
+                return false;
+            }
+
+
+            alert("Form Submitted Successfully");
+            return true;
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+            Name:
+            <input type="text" id="name">
+            Address:
+            <textarea id="address"></textarea>
+
+
+            Username:
+            <input type="text" id="username">
+
+
+            Email:
+            <input type="email" id="email">
+
+
+            Password:
+            <input type="password" id="password">
+
+
+            Website:
+            <input type="url" id="website">
+
+
+            Phone:
+            <input type="text" id="phone">
+
+
+            Gender:
+            <br>
+            <input type="radio" name="gender" value="Male"> Male
+
+            <input type="radio" name="gender" value="Female"> Female
+
+
+            <br><br>
+
+            Course:
+            <select id="course">
+
+                <option value="">Select Course</option>
+                <option>BIM</option>
+                <option>BCA</option>
+                <option>BIT</option>
+                <option>BBA</option>
+
+            </select>
+
+
+            <br>
+
+            <button type="submit">
+                Submit
+            </button>
+
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

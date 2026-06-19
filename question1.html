@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Types Demo</title>
+    
+    <!-- External JavaScript-->
+    <script src="question1.js"></script>
+
+    <script>
+        function internalAlert() {
+            document.getElementById("demo").innerHTML = "Text changed by Internal JavaScript!";
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Implementation Types</h1>
+    <p id="demo">This is a paragraph that will change.</p>
+
+    <!-- 1. External Method -->
+    <button onclick="externalAlert()">Run External JS</button>
+
+    <!-- 2. Internal Method -->
+    <button onclick="internalAlert()">Run Internal JS</button>
+
+    <!-- 3. Inline Method: Code written directly inside the HTML attribute -->
+    <button onclick="alert('This is an Inline JavaScript alert!')">Run Inline JS</button>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Counter App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .counter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+
+        }
+        #count {
+            font-size: 24px;
+            padding: 10px 25px;
+            background: #f3cfc9;
+            border-radius: 5px;
+
+        }
+        .reset {
+            background: #3d7c3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Counter App</h1>
+    <div class="counter">
+        <button id="increment">+</button>
+        <span id="count">0</span>
+        <button id="decrement">-</button>
+    </div>
+    <button id="reset" class="reset">Reset</button>
+    <script>
+        let count = 0;
+        const countDisplay =
+            document.getElementById("count");
+        
+        const incrementBtn =
+            document.getElementById("increment");
+
+        const decrementBtn =
+            document.getElementById("decrement");
+
+        const resetBtn =
+            document.getElementById("reset");
+
+        incrementBtn.addEventListener("click",
+            () => {
+                count++;
+                countDisplay.textContent = count;
+            });
+        decrementBtn.addEventListener("click",
+            () => {
+                count--;
+                countDisplay.textContent = count;
+            });
+
+        resetBtn.addEventListener("click",
+            () => {
+                count = 0;
+                countDisplay.textContent = count;
+            });
+    </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Outer border container to match the image layout */
+        .calculator-border {
+            border: 1px solid #777;
+            padding: 8px;
+            background-color: #fff;
+        }
+
+        /* Grid container matching the layout rows and columns */
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 70px);
+            grid-gap: 5px;
+        }
+
+        /* Screen spans across 3 columns */
+        .screen {
+            grid-column: span 3;
+            height: 50px;
+            font-size: 1.5rem;
+            text-align: right;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        /* Standardized button styling matching the bright green theme */
+        button {
+            height: 50px;
+            background-color: #008000; /* Distinct dark green */
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.1s ease;
+        }
+
+        button:hover {
+            background-color: #006400; /* Darker green on hover */
+        }
+
+        button:active {
+            background-color: #004d00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator-border">
+    <div class="calculator-grid">
+        <input type="text" id="display" class="screen" readonly>
+        
+        <button onclick="clearDisplay()">C</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('/')">/</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('*')">*</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('-')">-</button>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendValue('+')">+</button>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('display');
+
+    // Appends numbers or operators to the input field
+    function appendValue(value) {
+        display.value += value;
+    }
+
+    // Completely clears the input field
+    function clearDisplay() {
+        display.value = '';
+    }
+
+    // Evaluates the string mathematical expression safely
+    function calculateResult() {
+        try {
+            // Using Function constructor as a safer, standard alternative to eval()
+            if (display.value.trim() !== "") {
+                display.value = Function(`"use strict"; return (${display.value})`)();
+            }
+        } catch (error) {
+            display.value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 150px;
+            background-color: lightblue;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>jQuery Effects Example</h2>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="slideUp">Slide Up</button>
+<button id="slideDown">Slide Down</button>
+<button id="css">CSS Change</button>
+
+<div id="box">Hello jQuery</div>
+
+<script>
+$(document).ready(function(){
+
+    $("#hide").click(function(){
+        $("#box").hide();
+    });
+
+    $("#show").click(function(){
+        $("#box").show();
+    });
+
+    $("#toggle").click(function(){
+        $("#box").toggle();
+    });
+
+    $("#slideUp").click(function(){
+        $("#box").slideUp();
+    });
+
+    $("#slideDown").click(function(){
+        $("#box").slideDown();
+    });
+
+    $("#css").click(function(){
+        $("#box").css({
+            "background-color": "orange",
+            "color": "white",
+            "font-size": "20px"
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

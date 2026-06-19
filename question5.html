@@ -1,0 +1,46 @@
+<!-- Write a JavaScript program to calculate age taking input using form. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="ageForm">
+        <label for="birthdate">Select your Date of Birth:</label>
+        <input type="date" id="birthdate" required>
+        <button type="button" onclick="calculateAge()">Calculate Age</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateAge() {
+  const birthdateInput = document.getElementById('birthdate').value;
+  if (!birthdateInput) {
+    document.getElementById('result').innerText = "Please select a date.";
+    return;
+  }
+
+  const birthDate = new Date(birthdateInput);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+
+  const monthDifference = today.getMonth() - birthDate.getMonth();
+  const dayDifference = today.getDate() - birthDate.getDate();
+
+  if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+    age--;
+  }
+
+  document.getElementById('result').innerText = `You are ${age} years old.`;
+}
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add and Remove Table Rows</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 align="center">Dynamic Table Rows</h2>
+
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+
+        <tr class="data-row">
+            <td><input type="text" placeholder="Enter Name"></td>
+            <td><input type="number" placeholder="Age"></td>
+            <td>
+                <button onclick="removeRow(this)">🗑️</button>
+            </td>
+        </tr>
+    </table>
+
+    <center>
+        <button onclick="addRow()">Add New Row</button>
+    </center>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById("myTable");
+
+            // Clone the first data row
+            const firstRow = document.querySelector(".data-row");
+            const newRow = firstRow.cloneNode(true);
+
+            // Clear input values in cloned row
+            newRow.querySelectorAll("input").forEach(input => {
+                input.value = "";
+            });
+
+            // Add cloned row as last row
+            table.appendChild(newRow);
+        }
+
+        function removeRow(btn) {
+            const row = btn.parentNode.parentNode;
+            row.remove();
+        }
+    </script>
+
+</body>
+</html>

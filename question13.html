@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Example</title>
+</head>
+<body>
+
+    <h2>JavaScript Cookie Operations</h2>
+
+    <button onclick="setCookie()">Store Cookie</button>
+    <button onclick="getCookie()">Read Cookie</button>
+    <button onclick="deleteCookie()">Delete Cookie</button>
+
+    <p id="result"></p>
+
+    <script>
+        // Store Cookie
+        function setCookie() {
+            document.cookie = "username=John; expires=Fri, 31 Dec 2027 23:59:59 UTC; path=/";
+            document.getElementById("result").innerHTML =
+                "Cookie Stored Successfully!";
+        }
+
+        // Read Cookie
+        function getCookie() {
+            let cookies = document.cookie;
+            document.getElementById("result").innerHTML =
+                "Stored Cookies: " + cookies;
+        }
+
+        // Delete Cookie
+        function deleteCookie() {
+            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            document.getElementById("result").innerHTML =
+                "Cookie Deleted Successfully!";
+        }
+    </script>
+
+</body>
+</html>
